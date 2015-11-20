@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="4.9.3 -mcpu=cortex-m3 -mthumb -g2 -Map=anssip.map -O0 --gc-sections -LC:\Users\Aldwin\AppData\Roaming\CooCox\CoIDE\configuration\ProgramData\anssip -TC:\Users\Aldwin\AppData\Roaming\CooCox\CoIDE\configuration\ProgramData\anssip/arm-gcc-link.ld -g">
+      <target file="anssip.elf" lastModified="151259a7dc9">
+         <source file="..\obj\stm32f10x_tim.o" lastModified="151259a651e"/>
+         <source file="..\obj\stm32f10x_exti.o" lastModified="151259a70af"/>
+         <source file="..\obj\stm32f10x_rcc.o" lastModified="151259a6f04"/>
+         <source file="..\obj\stm32f10x_crc.o" lastModified="151259a6e22"/>
+         <source file="..\obj\stm32f10x_gpio.o" lastModified="151259a6b81"/>
+         <source file="..\obj\I2C.o" lastModified="151259a6fd8"/>
+         <source file="..\obj\stm32f10x_flash.o" lastModified="151259a73c2"/>
+         <source file="..\obj\stm32f10x_spi.o" lastModified="151259a7844"/>
+         <source file="..\obj\stm32f10x_cec.o" lastModified="151259a7466"/>
+         <source file="..\obj\stm32f10x_pwr.o" lastModified="151259a680b"/>
+         <source file="..\obj\stm32f10x_sdio.o" lastModified="151259a7522"/>
+         <source file="..\obj\stm32f10x_iwdg.o" lastModified="151259a7a83"/>
+         <source file="..\obj\stm32f10x_can.o" lastModified="151259a6957"/>
+         <source file="..\obj\stm32f10x_dma.o" lastModified="151259a75d5"/>
+         <source file="..\obj\stm32f10x_dbgmcu.o" lastModified="151259a65a4"/>
+         <source file="..\obj\startup_stm32f10x_hd.o" lastModified="151259a6668"/>
+         <source file="..\obj\stm32f10x_usart.o" lastModified="151259a7262"/>
+         <source file="..\obj\stm32f10x_dac.o" lastModified="151259a6c48"/>
+         <source file="..\obj\misc.o" lastModified="151259a769e"/>
+         <source file="..\obj\syscalls.o" lastModified="151259a72fd"/>
+         <source file="..\obj\LiquidCrystal_I2C.o" lastModified="151259a6a58"/>
+         <source file="..\obj\stm32f10x_i2c.o" lastModified="151259a7939"/>
+         <source file="..\obj\stm32f10x_rtc.o" lastModified="151259a61a8"/>
+         <source file="..\obj\stm32f10x_bkp.o" lastModified="151259a79e5"/>
+         <source file="..\obj\semihosting.o" lastModified="151259a627c"/>
+         <source file="..\obj\delay.o" lastModified="151259a6335"/>
+         <source file="..\obj\stm32f10x_wwdg.o" lastModified="151259a7770"/>
+         <source file="..\obj\sh_cmd.o" lastModified="151259a727a"/>
+         <source file="..\obj\system_stm32f10x.o" lastModified="151259a6649"/>
+         <source file="..\obj\stm32f10x_fsmc.o" lastModified="151259a675c"/>
+         <source file="..\obj\main.o" lastModified="151259a6d75"/>
+         <source file="..\obj\stm32f10x_adc.o" lastModified="151259a71a2"/>
+      </target>
+   </processor>
+</history>

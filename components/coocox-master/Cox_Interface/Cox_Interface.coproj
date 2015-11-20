@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Project version="2G - Default" name="Cox_Interface">
+  <Target name="Cox_Interface" isCurrent="1">
+    <Device manufacturerId="7" manufacturerName="NXP" chipId="480" chipName="LPC1768" boardId="" boardName="" coreId="" coreName=""/>
+    <BuildOption>
+      <Compile>
+        <Option name="OptimizationLevel" value="0"/>
+        <Option name="UseFPU" value="0"/>
+        <Option name="UserEditCompiler" value=""/>
+        <Option name="SupportCPlusplus" value="0"/>
+        <Includepaths>
+          <Includepath path="."/>
+        </Includepaths>
+        <DefinedSymbols>
+          <Define name="LPC1768"/>
+          <Define name="LPC_176x"/>
+        </DefinedSymbols>
+      </Compile>
+      <Link useDefault="0">
+        <Option name="DiscardUnusedSection" value="0"/>
+        <Option name="UserEditLinkder" value=""/>
+        <Option name="UseMemoryLayout" value="1"/>
+        <Option name="nostartfiles" value="1"/>
+        <Option name="LTO" value="0"/>
+        <Option name="IsNewStartupCode" value="1"/>
+        <Option name="Library" value="Not use C Library"/>
+        <LinkedLibraries/>
+        <MemoryAreas debugInFlashNotRAM="1">
+          <Memory name="IROM1" type="ReadOnly" size="0x00080000" startValue="0x00000000"/>
+          <Memory name="IRAM1" type="ReadWrite" size="0x00008000" startValue="0x10000000"/>
+          <Memory name="IROM2" type="ReadOnly" size="" startValue=""/>
+          <Memory name="IRAM2" type="ReadWrite" size="0x00008000" startValue="0x2007C000"/>
+        </MemoryAreas>
+        <LocateLinkFile path="../../../../../../appdata/roaming/coocox/coide/configuration/programdata/cox_interface/arm-gcc-link.ld" type="0"/>
+      </Link>
+      <Output>
+        <Option name="OutputFileType" value="0"/>
+        <Option name="Path" value="./"/>
+        <Option name="Name" value="Cox_Interface"/>
+        <Option name="HEX" value="1"/>
+        <Option name="BIN" value="1"/>
+      </Output>
+      <User>
+        <UserRun name="Run#1" type="Before" checked="0" value=""/>
+        <UserRun name="Run#1" type="After" checked="0" value=""/>
+      </User>
+    </BuildOption>
+    <DebugOption>
+      <Option name="org.coocox.codebugger.gdbjtag.core.adapter" value="ColinkEx"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.debugMode" value="SWD"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.clockDiv" value="1M"/>
+      <Option name="org.coocox.codebugger.gdbjtag.corerunToMain" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkgdbserver" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.userDefineGDBScript" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.targetEndianess" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkResetMode" value="Type 0: Normal"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.resetMode" value="SYSRESETREQ"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifSemihost" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifCacheRom" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ipAddress" value="127.0.0.1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.portNumber" value="2009"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.autoDownload" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.verify" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.downloadFuction" value="Erase Effected"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.defaultAlgorithm" value="C:\Users\Sam\AppData\Roaming\CooCox\CoIDE\config\flash\CooCox-Flash\CoIDE_LPC17xx_512K\LPC17xx_512.elf"/>
+    </DebugOption>
+    <ExcludeFile/>
+  </Target>
+  <Components path="./"/>
+  <LocalComponents/>
+  <Files>
+    <File name="Cox_LPC17xx_Port/timer.h" path="../Cox_LPC17xx_Port/Source/timer.h" type="1"/>
+    <File name="helloworld/Timer_Continous_Mode_Example/Timer_Continous_Mode_Example.c" path="helloworld/Timer_Continous_Mode_Example/Timer_Continous_Mode_Example.c" type="1"/>
+    <File name="helloworld/ADC_Multichannel_Sampling_Example/ADC_Multichannel_Sampling_Example.c" path="helloworld/ADC_Multichannel_Sampling_Example/ADC_Multichannel_Sampling_Example.c" type="1"/>
+    <File name="components/Retarget_printf/printf.c" path="../Retarget_printf/source/printf.c" type="1"/>
+    <File name="source/xhw_types.h" path="source/xhw_types.h" type="1"/>
+    <File name="helloworld/ADC_Capture_Trigger_Example/ADC_Capture_Trigger_Example.c" path="helloworld/ADC_Capture_Trigger_Example/ADC_Capture_Trigger_Example.c" type="1"/>
+    <File name="source/xlowlayer.h" path="source/xlowlayer.h" type="1"/>
+    <File name="helloworld/WDT_Reset_Example" path="" type="2"/>
+    <File name="Cox_LPC17xx_Port/spi.c" path="../Cox_LPC17xx_Port/Source/spi.c" type="1"/>
+    <File name="helloworld/Timer_Periodic_Mode_Example/Timer_Periodic_Mode_Example.c" path="helloworld/Timer_Periodic_Mode_Example/Timer_Periodic_Mode_Example.c" type="1"/>
+    <File name="Cox_LPC17xx_Port/hw_i2c.h" path="../Cox_LPC17xx_Port/Source/hw_i2c.h" type="1"/>
+    <File name="Cox_LPC17xx_Port/sysctl.c" path="../Cox_LPC17xx_Port/Source/sysctl.c" type="1"/>
+    <File name="helloworld/ADC_Multichannel_Sampling_Example" path="" type="2"/>
+    <File name="source/xuart.h" path="source/xuart.h" type="1"/>
+    <File name="Cox_LPC17xx_Port/pwm.c" path="../Cox_LPC17xx_Port/Source/pwm.c" type="1"/>
+    <File name="Cox_LPC17xx_Port/can.h" path="../Cox_LPC17xx_Port/Source/can.h" type="1"/>
+    <File name="Cox_LPC17xx_Port/xusb_config.h" path="../Cox_LPC17xx_Port/Source/xusb_config.h" type="1"/>
+    <File name="source/xhw_nvic.h" path="source/xhw_nvic.h" type="1"/>
+    <File name="helloworld/SPI_Master_Example" path="" type="2"/>
+    <File name="Cox_LPC17xx_Port/spi.h" path="../Cox_LPC17xx_Port/Source/spi.h" type="1"/>
+    <File name="Cox_LPC17xx_Port/hw_gpio.h" path="../Cox_LPC17xx_Port/Source/hw_gpio.h" type="1"/>
+    <File name="Cox_LPC17xx_Port/rtc.h" path="../Cox_LPC17xx_Port/Source/rtc.h" type="1"/>
+    <File name="helloworld/GPIO_LED_Example/GPIO_LED_Example.c" path="helloworld/GPIO_LED_Example/GPIO_LED_Example.c" type="1"/>
+    <File name="helloworld/ADC_EXT_Trigger_Example/ADC_EXT_Trigger_Example.c" path="helloworld/ADC_EXT_Trigger_Example/ADC_EXT_Trigger_Example.c" type="1"/>
+    <File name="sdcard/hw_sdcard.h" path="../sdcard/source/hw_sdcard.h" type="1"/>
+    <File name="helloworld/Timer_Toggle_Mode_Example" path="" type="2"/>
+    <File name="Cox_LPC17xx_Port/pwm.h" path="../Cox_LPC17xx_Port/Source/pwm.h" type="1"/>
+    <File name="helloworld/Timer_Periodic_Mode_Example" path="" type="2"/>
+    <File name="helloworld/Timer_Continous_Mode_Example" path="" type="2"/>
+    <File name="Cox_LPC17xx_Port/hw_rtc.h" path="../Cox_LPC17xx_Port/Source/hw_rtc.h" type="1"/>
+    <File name="Cox_LPC17xx_Port/hw_adc.h" path="../Cox_LPC17xx_Port/Source/hw_adc.h" type="1"/>
+    <File name="Cox_LPC17xx_Port/hw_usb.h" path="../Cox_LPC17xx_Port/Source/hw_usb.h" type="1"/>
+    <File name="helloworld/Uart_Interrupt_Example" path="" type="2"/>
+    <File name="Cox_LPC17xx_Port/timer.c" path="../Cox_LPC17xx_Port/Source/timer.c" type="1"/>
+    <File name="Cox_LPC17xx_Port/sysctl.h" path="../Cox_LPC17xx_Port/Source/sysctl.h" type="1"/>
+    <File name="helloworld/Uart_Interrupt_Example/Uart_Interrupt_Example.c" path="helloworld/Uart_Interrupt_Example/Uart_Interrupt_Example.c" type="1"/>
+    <File name="helloworld/RTC_Tick_Int_Example" path="" type="2"/>
+    <File name="Cox_LPC17xx_Port/hw_wdt.h" path="../Cox_LPC17xx_Port/Source/hw_wdt.h" type="1"/>
+    <File name="helloworld/SPI_Master_Example/SPI_Master_Example.c" path="helloworld/SPI_Master_Example/SPI_Master_Example.c" type="1"/>
+    <File name="helloworld/Uart_Basic_Example/Uart_Basic_Example.c" path="helloworld/Uart_Basic_Example/Uart_Basic_Example.c" type="1"/>
+    <File name="source/CoX.h" path="source/CoX.h" type="1"/>
+    <File name="source/xcan.h" path="source/xcan.h" type="1"/>
+    <File name="components/C_library/syscalls.c" path="../C_library/source/syscalls.c" type="1"/>
+    <File name="Cox_LPC17xx_Port/hw_dma.h" path="../Cox_LPC17xx_Port/Source/hw_dma.h" type="1"/>
+    <File name="source/xadc.h" path="source/xadc.h" type="1"/>
+    <File name="helloworld/Timer_Capture_Mode_Example" path="" type="2"/>
+    <File name="helloworld/GPIO_KEY_Example/GPIO_KEY_Example.c" path="helloworld/GPIO_KEY_Example/GPIO_KEY_Example.c" type="1"/>
+    <File name="source" path="" type="2"/>
+    <File name="helloworld/Timer_Oneshot_Mode_Example" path="" type="2"/>
+    <File name="Cox_LPC17xx_Port/dma.c" path="../Cox_LPC17xx_Port/Source/dma.c" type="1"/>
+    <File name="helloworld/PWM_OutPut_Example" path="" type="2"/>
+    <File name="Cox_LPC17xx_Port/rtc.c" path="../Cox_LPC17xx_Port/Source/rtc.c" type="1"/>
+    <File name="helloworld/PWM_Match_Interrupt_Example/PWM_Match_Interrupt_Example.c" path="helloworld/PWM_Match_Interrupt_Example/PWM_Match_Interrupt_Example.c" type="1"/>
+    <File name="Cox_LPC17xx_Port/uart.c" path="../Cox_LPC17xx_Port/Source/uart.c" type="1"/>
+    <File name="helloworld/ADC_MAT_Trigger_Example" path="" type="2"/>
+    <File name="source/xdebug.h" path="source/xdebug.h" type="1"/>
+    <File name="helloworld/PWM_OutPut_Example/PWM_OutPut_Example.c" path="helloworld/PWM_OutPut_Example/PWM_OutPut_Example.c" type="1"/>
+    <File name="helloworld/SPI_Master_Slave_Example" path="" type="2"/>
+    <File name="Cox_LPC17xx_Port/acmp.h" path="../Cox_LPC17xx_Port/Source/acmp.h" type="1"/>
+    <File name="Cox_LPC17xx_Port/i2c.h" path="../Cox_LPC17xx_Port/Source/i2c.h" type="1"/>
+    <File name="helloworld/WDT_Reset_Example/WDT_Reset_Example.c" path="helloworld/WDT_Reset_Example/WDT_Reset_Example.c" type="1"/>
+    <File name="Cox_LPC17xx_Port/uart.h" path="../Cox_LPC17xx_Port/Source/uart.h" type="1"/>
+    <File name="Cox_LPC17xx_Port/hw_can.h" path="../Cox_LPC17xx_Port/Source/hw_can.h" type="1"/>
+    <File name="Cox_LPC17xx_Port/can.c" path="../Cox_LPC17xx_Port/Source/can.c" type="1"/>
+    <File name="source/xdebug.c" path="source/xdebug.c" type="1"/>
+    <File name="helloworld/SPI_Master_Slave_Example/SPI_Master_Slave_Example.c" path="helloworld/SPI_Master_Slave_Example/SPI_Master_Slave_Example.c" type="1"/>
+    <File name="Cox_LPC17xx_Port/lowlayer.h" path="../Cox_LPC17xx_Port/Source/lowlayer.h" type="1"/>
+    <File name="main.c" path="test/main.c" type="1"/>
+    <File name="Cox_LPC17xx_Port/hw_uart.h" path="../Cox_LPC17xx_Port/Source/hw_uart.h" type="1"/>
+    <File name="source/xwdt.h" path="source/xwdt.h" type="1"/>
+    <File name="Cox_LPC17xx_Port/wdt.h" path="../Cox_LPC17xx_Port/Source/wdt.h" type="1"/>
+    <File name="Cox_LPC17xx_Port/adc.c" path="../Cox_LPC17xx_Port/Source/adc.c" type="1"/>
+    <File name="Cox_LPC17xx_Port/hw_timer.h" path="../Cox_LPC17xx_Port/Source/hw_timer.h" type="1"/>
+    <File name="Cox_LPC17xx_Port/hw_pwm.h" path="../Cox_LPC17xx_Port/Source/hw_pwm.h" type="1"/>
+    <File name="helloworld/Timer_Toggle_Mode_Example/Timer_Toggle_Mode_Example.c" path="helloworld/Timer_Toggle_Mode_Example/Timer_Toggle_Mode_Example.c" type="1"/>
+    <File name="source/xi2c.h" path="source/xi2c.h" type="1"/>
+    <File name="helloworld/GPIO_LED_Example" path="" type="2"/>
+    <File name="helloworld/ADC_Singlechannel_Sampling_Example" path="" type="2"/>
+    <File name="helloworld/Uart_Basic_Example" path="" type="2"/>
+    <File name="helloworld/ADC_Singlechannel_Sampling_Example/ADC_Singlechannel_Sampling_Example.c" path="helloworld/ADC_Singlechannel_Sampling_Example/ADC_Singlechannel_Sampling_Example.c" type="1"/>
+    <File name="helloworld/RTC_Tick_Int_Example/RTC_Tick_Int_Example.c" path="helloworld/RTC_Tick_Int_Example/RTC_Tick_Int_Example.c" type="1"/>
+    <File name="helloworld/SPI_SDCard_Example" path="" type="2"/>
+    <File name="Cox_LPC17xx_Port/core.c" path="../Cox_LPC17xx_Port/Source/core.c" type="1"/>
+    <File name="sdcard/sdcard_config.h" path="../sdcard/helloworld/ReadWrite/sdcard_config.h" type="1"/>
+    <File name="source/xtimer.h" path="source/xtimer.h" type="1"/>
+    <File name="source/xcore.h" path="source/xcore.h" type="1"/>
+    <File name="Cox_LPC17xx_Port/wdt.c" path="../Cox_LPC17xx_Port/Source/wdt.c" type="1"/>
+    <File name="source/xusb.h" path="source/xusb.h" type="1"/>
+    <File name="source/xgpio.h" path="source/xgpio.h" type="1"/>
+    <File name="Cox_LPC17xx_Port/gpio.h" path="../Cox_LPC17xx_Port/Source/gpio.h" type="1"/>
+    <File name="helloworld/Timer_Oneshot_Mode_Example/Timer_Oneshot_Mode_Example.c" path="helloworld/Timer_Oneshot_Mode_Example/Timer_Oneshot_Mode_Example.c" type="1"/>
+    <File name="helloworld/ADC_Capture_Trigger_Example" path="" type="2"/>
+    <File name="helloworld/Timer_Capture_Mode_Example/Timer_Capture_Mode_Example.c" path="helloworld/Timer_Capture_Mode_Example/Timer_Capture_Mode_Example.c" type="1"/>
+    <File name="sdcard/sdcard.c" path="../sdcard/source/sdcard.c" type="1"/>
+    <File name="Cox_LPC17xx_Port/hw_spi.h" path="../Cox_LPC17xx_Port/Source/hw_spi.h" type="1"/>
+    <File name="components/C_library" path="" type="2"/>
+    <File name="Cox_LPC17xx_Port/dma.h" path="../Cox_LPC17xx_Port/Source/dma.h" type="1"/>
+    <File name="source/xrtc.h" path="source/xrtc.h" type="1"/>
+    <File name="helloworld" path="" type="2"/>
+    <File name="Cox_LPC17xx_Port/xPort.h" path="../Cox_LPC17xx_Port/Source/xPort.h" type="1"/>
+    <File name="sdcard/sdcard.h" path="../sdcard/source/sdcard.h" type="1"/>
+    <File name="helloworld/GPIO_KEY_Example" path="" type="2"/>
+    <File name="helloworld/SPI_SDCard_Example/SPI_SDCard_Example.c" path="helloworld/SPI_SDCard_Example/SPI_SDCard_Example.c" type="1"/>
+    <File name="helloworld/ADC_EXT_Trigger_Example" path="" type="2"/>
+    <File name="helloworld/PWM_Match_Interrupt_Example" path="" type="2"/>
+    <File name="helloworld/WDT_Interrupt_Example" path="" type="2"/>
+    <File name="source/xpwm.h" path="source/xpwm.h" type="1"/>
+    <File name="Cox_LPC17xx_Port/hw_sysctl.h" path="../Cox_LPC17xx_Port/Source/hw_sysctl.h" type="1"/>
+    <File name="components/Retarget_printf" path="" type="2"/>
+    <File name="sdcard" path="" type="2"/>
+    <File name="source/xsysctl.h" path="source/xsysctl.h" type="1"/>
+    <File name="source/xacmp.h" path="source/xacmp.h" type="1"/>
+    <File name="Cox_LPC17xx_Port/gpio.c" path="../Cox_LPC17xx_Port/Source/gpio.c" type="1"/>
+    <File name="Cox_LPC17xx_Port" path="" type="2"/>
+    <File name="helloworld/WDT_Interrupt_Example/WDT_Interrupt_Example.c" path="helloworld/WDT_Interrupt_Example/WDT_Interrupt_Example.c" type="1"/>
+    <File name="Cox_LPC17xx_Port/adc.h" path="../Cox_LPC17xx_Port/Source/adc.h" type="1"/>
+    <File name="source/xdma.h" path="source/xdma.h" type="1"/>
+    <File name="components" path="" type="2"/>
+    <File name="Cox_LPC17xx_Port/xusb.c" path="../Cox_LPC17xx_Port/Source/xusb.c" type="1"/>
+    <File name="source/xspi.h" path="source/xspi.h" type="1"/>
+    <File name="helloworld/RTC_Alarm_Int_Example" path="" type="2"/>
+    <File name="helloworld/RTC_Alarm_Int_Example/RTC_Alarm_Int_Example.c" path="helloworld/RTC_Alarm_Int_Example/RTC_Alarm_Int_Example.c" type="1"/>
+    <File name="helloworld/ADC_MAT_Trigger_Example/ADC_MAT_Trigger_Example.c" path="helloworld/ADC_MAT_Trigger_Example/ADC_MAT_Trigger_Example.c" type="1"/>
+  </Files>
+  <Bookmarks/>
+</Project>
