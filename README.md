@@ -1,6 +1,5 @@
 
-Project {#index}
+Anssip
 ===================
 
-
-This is an example project.
+Anti-Skipping Class Chair using STM32F103, MFRC522, ESP8266 and a Web Server
