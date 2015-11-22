@@ -1,25 +1,27 @@
+#include "usart.h"
 #include "i2c_dma.h"
-#include "hd44780_i2c.h"
+#include "hd44780-i2c.h"
 #include "utils.h"
 #include <stdio.h>
 
 void NVIC_Configuration(void);
 
+
 int main(void)
 {
+	USART1_Init(9600);
 
 	NVIC_Configuration();
-	LED_Init1();
+	LED_Init();
 	I2C_LowLevel_Init(I2C1);
 
-	hd44780_init(TIM2);
-	hd44780_go_to(1,1);
-    hd44780_backlight(true);
-    hd44780_print("Aldwin Akbar");
-    delay_ms(timer, 2000);
-    hd44780_clear();
-    hd44780_print("Aldwin Akbar H");
+	printf("System ready\r\n");
 
+	hd44780_init(TIM2);
+    while(1)
+    {
+
+    }
 }
 
 void NVIC_Configuration(void)
