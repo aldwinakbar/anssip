@@ -1,4 +1,5 @@
 #include "hd44780_i2c.h"
+#include "delay.h"
 
 /*
  * Useful commands:
@@ -20,6 +21,7 @@ u8 backlight = 1 << 3;
 u8 en        = 1 << 2;
 u8 rw        = 1 << 1;
 u8 rs        = 1 << 0;
+
 uint8_t data[4] = {0x00, 0x00, 0x00};
 
 void hd44780_send(u8 cmd, bool set_rs) {
@@ -36,12 +38,12 @@ void hd44780_send(u8 cmd, bool set_rs) {
 
 void hd44780_char(u8 cmd) {
 	hd44780_send(cmd, true);
-	delay_us(timer, 200);
+	delay_us(200);
 }
 
 void hd44780_cmd(u8 cmd) {
 	hd44780_send(cmd, false);
-	delay_us(timer, 5000);
+	delay_us(5000);
 }
 
 void hd44780_print(char *string) {
@@ -96,41 +98,21 @@ void hd44780_cgram_write(u8 pos, u8 data[8]) {
 	}
 }
 
-void hd44780_init(TIM_TypeDef *t) {
-	timer = t;
-	// Setup clock
-	if (timer == TIM2)
-		RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
-	else if (timer == TIM3)
-	    RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
-	else
-		while(1){} // not implemented
-	TIM_TimeBaseInitTypeDef TIM_InitStructure;
-	TIM_InitStructure.TIM_CounterMode = TIM_CounterMode_Up;
-	TIM_InitStructure.TIM_Prescaler = 72 - 1;
-	TIM_InitStructure.TIM_Period = 10000 - 1; // Update event every 10000 us / 10 ms
-	TIM_InitStructure.TIM_ClockDivision = TIM_CKD_DIV1;
-	TIM_InitStructure.TIM_RepetitionCounter = 0;
-	TIM_TimeBaseInit(timer, &TIM_InitStructure);
-	TIM_Cmd(timer, ENABLE);
 
-
+void hd44780_init() {
+	
 	data[0] = 0x00 | backlight;
 	data[1] = 0x00 | backlight;
-
-//	GPIO_SetBits(GPIOC, GPIO_Pin_8);
-//	delay_us(timer, 250);
-//	GPIO_ResetBits(GPIOC, GPIO_Pin_8);
 
 	// Reset all
 	I2C_Master_BufferWrite(I2C1, data, 1, Polling, hd44780_address << 1);
 
 	hd44780_cmd(0x03);
-	delay_us(timer, 5000);
+	delay_us(5000);
 	hd44780_cmd(0x03);
-	delay_us(timer, 100);
+	delay_us(100);
 	hd44780_cmd(0x02);
-	delay_us(timer, 200);
+	delay_us(200);
 
 	hd44780_cmd(0x28); // 4 bit mode
 	hd44780_cmd(0x06); // set direction of cursor to right
@@ -143,17 +125,6 @@ void hd44780_init(TIM_TypeDef *t) {
 
 	hd44780_cmd(0x01); // clear display, go to 0x0
 
-//	hd44780_backlight(true);
-//	hd44780_print("Linia 0");
-//	hd44780_go_to_line(1);
-//	hd44780_print("Linia 1");
-//	hd44780_go_to_line(2);
-//	hd44780_print("Linia 2");
-//	hd44780_go_to_line(3);
-//	hd44780_print("Linia 3");
-
-//	hd44780_char(0);
-//	hd44780_char(1);
 }
 
 // Added simple function
