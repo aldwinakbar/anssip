@@ -15,7 +15,9 @@
 int main(void){
 
 	// ####### Variable Declaration #######
-	int i = 0,d=0;
+	int i = 0,d=0,x=0;
+	char uid_data[8];
+
 	// ####### Variable Declaration #######
 
 	// ####### Hardware Initialization #######
@@ -39,17 +41,40 @@ int main(void){
 	while (1) {
 
 		if(USART1->SR & USART_FLAG_RXNE){
-				d = (int)(USART1->DR & 0x1FF);
-				if(d == 'o'){
-					hd44780_clear();
-				}
-				SendCharUart2(d);
+			d = (int)(USART1->DR & 0x1FF);
+			if(d == 'o'){
+				//usart2_print("AT+GMR\r\n");
+				usart2_print("AT+CIPSTART=\"TCP\",\"192.168.43.53\",50005\r\n");
+				hd44780_clear();
+				SendCharUart1(x+48);
 			}
+			uid_data[x] = d;
+			x++;
+			if(x == 8){
+				usart2_print("AT+CIPSTART=\"TCP\",\"192.168.43.53\",50005\r\n");
+				DWT_Delay(3000000);
+				usart2_print("AT+CIPSEND=8\r\n");
+				DWT_Delay(3000000);
+				SendCharUart2(uid_data[0]);
+				SendCharUart2(uid_data[1]);
+				SendCharUart2(uid_data[2]);
+				SendCharUart2(uid_data[3]);
+				SendCharUart2(uid_data[4]);
+				SendCharUart2(uid_data[5]);
+				SendCharUart2(uid_data[6]);
+				SendCharUart2(uid_data[7]);
+				usart2_print("\r\n");
+				DWT_Delay(3000000);
+				usart2_print("AT+CIPCLOSE\r\n");
+				DWT_Delay(3000000);
+				x=0;
+			}
+		}
 
 		if(USART2->SR & USART_FLAG_RXNE) //Echo UART1
 		    {
 				i = (int)(USART2->DR & 0x1FF);
-				hd44780_char(i);
+
 				SendCharUart1(i);
 		    }
 		//usart1_print("Test Success\r\n");
@@ -57,6 +82,14 @@ int main(void){
 		//usart2_print("AT");
 
 		//DWT_Delay(1000000);
+	}
+}
+void atWait(){
+
+
+	while (!(USART2->SR & USART_FLAG_RXNE));
+	while ((USART2->SR & USART_FLAG_RXNE)){
+		SendCharUart1((int)(USART2->DR & 0x1FF));
 	}
 }
 

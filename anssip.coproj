@@ -114,9 +114,9 @@
     <File name="components/cmsis_core/core_cm0.h" path="components/coocox-master/cmsis_core/source/core_cm0.h" type="1"/>
     <File name="components/STM32F10x_MD_STDLIB/stm32f10x_bkp.c" path="components/coocox-master/STM32F10x_MD_STDLIB/source/stm32f10x_bkp.c" type="1"/>
     <File name="components/STM32F10x_MD_STDLIB/stm32f10x_can.c" path="components/coocox-master/STM32F10x_MD_STDLIB/source/stm32f10x_can.c" type="1"/>
+    <File name="components/Semihosting/semihosting.h" path="components/coocox-master/Semihosting/source/semihosting.h" type="1"/>
     <File name="components/hd44780_i2c/i2c_dma.c" path="components/coocox-master/hd44780_i2c/i2c_dma.c" type="1"/>
     <File name="components/STM32F10x_MD_STDLIB/stm32f10x_crc.h" path="components/coocox-master/STM32F10x_MD_STDLIB/source/stm32f10x_crc.h" type="1"/>
-    <File name="components/Semihosting/semihosting.h" path="components/coocox-master/Semihosting/source/semihosting.h" type="1"/>
     <File name="components/STM32F10x_MD_STDLIB/stm32f10x_dma.h" path="components/coocox-master/STM32F10x_MD_STDLIB/source/stm32f10x_dma.h" type="1"/>
     <File name="components/STM32F10x_MD_STDLIB/stm32f10x_flash.c" path="components/coocox-master/STM32F10x_MD_STDLIB/source/stm32f10x_flash.c" type="1"/>
     <File name="components/C_library/syscalls.c" path="components/coocox-master/C_library/source/syscalls.c" type="1"/>
