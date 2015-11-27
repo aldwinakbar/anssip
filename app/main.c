@@ -31,26 +31,31 @@ int main(void){
 	I2C_LowLevel_Init(I2C1);
 
 	hd44780_init(TIM2);
-	hd44780_go_to(1,1);
 	hd44780_backlight(true);
-//	hd44780_print("Aldwin Akbar");
-	DWT_Delay(1000000);
 	hd44780_clear();
-//	hd44780_print("Aldwin Akbar H");
-	// Init. RC522 Chip
+	hd44780_print(" Silahkan untuk ");
+	hd44780_go_to(1,0);
+	hd44780_print("tap kartu disana");
+	DWT_Delay(1000000);
+
 	while (1) {
 
 		if(USART1->SR & USART_FLAG_RXNE){
 			d = (int)(USART1->DR & 0x1FF);
-			if(d == 'o'){
-				//usart2_print("AT+GMR\r\n");
-				usart2_print("AT+CIPSTART=\"TCP\",\"192.168.43.53\",50005\r\n");
-				hd44780_clear();
-				SendCharUart1(x+48);
-			}
 			uid_data[x] = d;
 			x++;
 			if(x == 8){
+				hd44780_clear();
+				hd44780_print(" Selamat datang ");
+				hd44780_go_to(1,3);
+				hd44780_char(uid_data[0]);
+				hd44780_char(uid_data[1]);
+				hd44780_char(uid_data[2]);
+				hd44780_char(uid_data[3]);
+				hd44780_char(uid_data[4]);
+				hd44780_char(uid_data[5]);
+				hd44780_char(uid_data[6]);
+				hd44780_char(uid_data[7]);
 				usart2_print("AT+CIPSTART=\"TCP\",\"192.168.43.53\",50005\r\n");
 				DWT_Delay(3000000);
 				usart2_print("AT+CIPSEND=8\r\n");
@@ -67,21 +72,13 @@ int main(void){
 				DWT_Delay(3000000);
 				usart2_print("AT+CIPCLOSE\r\n");
 				DWT_Delay(3000000);
+				hd44780_clear();
+				hd44780_print(" Silahkan untuk ");
+				hd44780_go_to(1,0);
+				hd44780_print("tap kartu disana");
 				x=0;
 			}
 		}
-
-		if(USART2->SR & USART_FLAG_RXNE) //Echo UART1
-		    {
-				i = (int)(USART2->DR & 0x1FF);
-
-				SendCharUart1(i);
-		    }
-		//usart1_print("Test Success\r\n");
-		//DWT_Delay(1000000);
-		//usart2_print("AT");
-
-		//DWT_Delay(1000000);
 	}
 }
 void atWait(){
